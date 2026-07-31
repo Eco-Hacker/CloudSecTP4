@@ -1,0 +1,23 @@
+resource "aws_security_group" "sg_<###ITEM_NAME###>" {
+  name        = "sg_<###ITEM_NAME###>"
+  description = "Security group for <###ITEM_NAME###>"
+  vpc_id      = aws_vpc.vpc_<###PARAM_1###>.id
+
+  ingress {
+    from_port   = <###PARAM_2###>
+    to_port     = <###PARAM_2###>
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "sg_<###ITEM_NAME###>"
+  }
+}

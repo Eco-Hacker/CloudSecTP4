@@ -1,0 +1,9 @@
+resource "aws_subnet" "subnet_<###ITEM_NAME###>" {
+  vpc_id                  = aws_vpc.vpc_<###PARAM_1###>.id
+  cidr_block              = "<###PARAM_2###>"
+  map_public_ip_on_launch = <###PARAM_3###>
+
+  tags = {
+    Name = "subnet_<###ITEM_NAME###>"
+  }
+}

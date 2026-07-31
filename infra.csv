@@ -1,0 +1,11 @@
+vpc;tp4;10.0.0.0/16
+internet_gateway;tp3;tp4
+subnet;public;tp4#10.0.1.0/24#true
+subnet;private;tp4#10.0.2.0/24#false
+route_table;public;tp4#tp4
+security_group;bastion;tp4#22
+security_group;reverse_proxy;tp4#80
+security_group;webserver;tp4#80
+ec2;bastion;public#bastion#ami-0b6d9d3d33ba97d99#t3.micro#CloudSecurityKey#true
+ec2;reverse_proxy;public#reverse_proxy#ami-0b6d9d3d33ba97d99#t3.micro#CloudSecurityKey#true
+ec2;webserver;private#webserver#ami-0b6d9d3d33ba97d99#t3.micro#CloudSecurityKey#false
